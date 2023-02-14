@@ -1,0 +1,61 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <title>
+   Fauna Resume Builder
+  </title>
+  <link href="{% static './style.css' %}" rel="stylesheet"/>
+ </head>
+ <body>
+  <!-- partial:index.partial.html -->
+  <div id="javascript_header">
+  </div>
+  <form method="POST">
+    {% csrf_token %}
+   <div class="form__header">
+    <h1>
+     Login/Sign In
+    </h1>
+    <p>
+     Enter your login details below.
+    </p>
+    {% csrf_token %}
+<ul class="messages">
+  {% for message in messages %}
+  <li{% if message.tags %} class="{{ message.tags }}"{% endif %} style="color:red;">{{ message }}</li>
+  {% endfor %}
+</ul>
+   </div>
+   <div class="form-group">
+    <label for="name">
+     Username
+     <span>
+      *
+     </span>
+    </label>
+    <input id="username" name="username" type="text"/>
+    <div class="error" id="name__error">
+    </div>
+   </div>
+   <div class="form-group">
+    <label for="password">
+     Password
+     <span>
+      *
+     </span>
+    </label>
+    <input id="password" name="password" type="password"/>
+   </div>
+   <div class="line-break">
+   </div>
+   <input id="login" type="submit" value="Login"/>
+   Don't have an account? <a href="register">Sign Up</a>
+  </form>
+  <!-- partial -->
+  <script src="{% static './script.js' %}">
+  </script>
+ </body>
+</html>

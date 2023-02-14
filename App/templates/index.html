@@ -1,0 +1,39 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+   Fauna Resume Builder
+  </title>
+  <link href="{% static './style.css' %}" rel="stylesheet"/>
+ </head>
+ <body>
+  <!-- partial:index.partial.html -->
+  <div id="javascript_header">
+  </div>
+  <form>
+   <div class="form__header">
+    <h1>
+     Build Your Resume
+    </h1>
+    <p>
+     Dashboard
+    </p>
+   </div>
+
+   <div class="line-break">
+   </div>
+   <a class="button" href="create-resume"> Create/Edit Resume</a>
+   <div class="line-break">
+   </div>
+   <a class="button" href="resume"> View Resume</a>
+   <div class="line-break">
+   </div>
+   <a class="button" style="background-color:red;" href="login"> Logout </a>
+  </form>
+  <!-- partial -->
+  <script src="{% static './script.js' %}">
+  </script>
+ </body>
+</html>
